@@ -1,0 +1,27 @@
+-- ALTERING TABLE --
+
+CREATE TABLE student(
+	id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    age INT NOT NULL
+);
+
+-- ADD COLUMN --
+ALTER TABLE student
+ADD COLUMN mob VARCHAR(15);
+
+-- DROP COLUMN
+ALTER TABLE student
+DROP COLUMN mob;
+
+-- RENAME COLUMN 
+ALTER TABLE student
+RENAME COLUMN mob TO phone_no;
+
+-- RENAME TABLE -- 
+ALTER TABLE student
+RENAME TO person1;
+
+-- changing Datatype --
+ALTER TABLE person1
+MODIFY phone_no VARCHAR(10) DEFAULT 'Unknown';

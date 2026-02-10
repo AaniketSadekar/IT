@@ -1,0 +1,59 @@
+-- CONSTRAINT -- 
+USE learn_db;
+
+
+-- NOT NULL -- 
+CREATE TABLE nn(
+	id INT NOT NULL,
+    name VARCHAR(50) NOT NULL
+);
+
+DESC nn;
+
+-- DEFAULT -- 
+CREATE TABLE df(
+	id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    acc_type VARCHAR(50) DEFAULT 'Saving'
+);
+
+DESC df;
+
+-- PRIMARY KEY -- 
+CREATE TABLE pk(
+	id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    acc_type VARCHAR(50) DEFAULT 'Saving'
+);
+
+DESC pk;
+
+-- AUTO_INCREMENT --
+CREATE TABLE ai(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    acc_type VARCHAR(50) DEFAULT 'Saving'
+);
+
+DESC ai;
+
+-- UNIQUE -- 
+CREATE TABLE uq(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    acc_type VARCHAR(50) DEFAULT 'Saving',
+    mob VARCHAR(15) UNIQUE NOT NULL
+);
+DESC uq;
+
+-- CHECK -- 
+CREATE TABLE ch(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    acc_type VARCHAR(50) DEFAULT 'Saving',
+    mob VARCHAR(15) UNIQUE,
+    CONSTRAINT mob_no_less_than_10Digit CHECK (LENGTH(mob) >= 10)
+);
+
+
+
